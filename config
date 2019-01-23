@@ -139,6 +139,8 @@ bindsym $mod+$alt+Down move workspace to output down
 bindsym $mod+$alt+Left move workspace to output left
 bindsym $mod+$alt+Right move workspace to output right
 
+# lock
+bindsym $mod+$alt+l exec i3lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,8 +190,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# https://unix.stackexchange.com/questions/301724/xbacklight-not-working
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -201,6 +204,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+$alt+1 exec "~/.config/i3/screens/default.sh"
 bindsym $mod+$alt+2 exec "~/.config/i3/screens/2monitors.sh"
 bindsym $mod+$alt+3 exec "~/.config/i3/screens/3monitors.sh"
+bindsym $mod+$alt+0 exec "arandr"
 
 # key-bindings
 bindsym $mod+d exec "rofi -modi combi,window,drun -show combi"
